@@ -1,9 +1,5 @@
 package LeetCode;
 
-import com.sun.tools.javac.code.Attribute;
-
-import java.util.Arrays;
-
 /**
  * Created by Roshni Velluva Puthanidam on 15/01/18.
  */
