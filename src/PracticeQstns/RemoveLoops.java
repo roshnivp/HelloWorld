@@ -29,11 +29,21 @@ class RemoveLoops {
 
             // If slow and fast meet at same point then loop is present
             if (slow == fast) {
-                removeLoop(slow, node);
+                removeCycle(slow, node);
                 return 1;
             }
         }
         return 0;
+    }
+
+    void removeCycle(Node slow, Node curr){
+        Node prev =null;
+        while (slow!=curr){
+            prev = slow;
+            slow = slow.next;
+            curr = curr.next;
+        }
+        prev.next = null;
     }
 
     // Function to remove loop
@@ -87,6 +97,7 @@ class RemoveLoops {
 
         // Creating a loop for testing
         head.next.next.next.next.next = head.next.next;
+//        list.printList(head);
         list.detectAndRemoveLoop(head);
         System.out.println("Linked List after removing loop : ");
         list.printList(head);
