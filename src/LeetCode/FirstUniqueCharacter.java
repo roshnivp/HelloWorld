@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class FirstUniqueCharacter {
     static int firstUniqChar(String s) {
-        Map<Character,Integer> map = new LinkedHashMap<>();
+        Map<Character,Integer> map = new LinkedHashMap<>(); //maintain the insertion order
 
         for(int i=0;i<s.length();i++){
             if(map.containsKey(s.charAt(i))){
@@ -22,7 +22,7 @@ public class FirstUniqueCharacter {
         }
         char k = ' ';
         for(Map.Entry<Character,Integer> hm: map.entrySet()){
-            if(hm.getValue()==1){
+            if(hm.getValue() == 1){
                 k= hm.getKey();
                 break;
             }

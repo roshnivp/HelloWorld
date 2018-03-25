@@ -9,7 +9,7 @@ public class PrintNodesinKDist {
 
         if(root==null) return;
 
-        if(k==0)  System.out.println(root.val);
+        if(k == 0)  System.out.println(root.val);
         else{
             nodeInKDist(root.left, k-1);
             nodeInKDist(root.right, k-1);

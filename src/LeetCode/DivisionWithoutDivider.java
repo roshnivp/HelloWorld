@@ -15,12 +15,12 @@ public class DivisionWithoutDivider {
             if(dividend >= current_divisor){
                 dividend -=current_divisor;
                 quotient +=quotient_base;
-                current_divisor <<=1;
-                quotient_base <<=1;
+                current_divisor <<= 1;
+                quotient_base <<= 1;
             }
             else {
-                current_divisor >>=1;
-                quotient_base >>=1;
+                current_divisor >>= 1;
+                quotient_base >>= 1;
             }
         }
         long end = System.nanoTime();

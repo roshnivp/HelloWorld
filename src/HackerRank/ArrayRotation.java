@@ -12,24 +12,12 @@ import java.util.regex.*;
 public class ArrayRotation {
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named PracticeQstns.StackOperation. */
-//        Scanner in = new Scanner(System.in);
-//        int n = in.nextInt();
-//        int noOfRotation = in.nextInt();
-//        int arr[] = new int[n];
-//        for (int arr_i = 0; arr_i < n; arr_i++) {
-//            arr[arr_i] = in.nextInt();
-//        }
+
         ArrayRotation ar = new ArrayRotation();
         ar.leftRotate(new int[]{1,2,3,4,5}, 2, 5);
     }
 
     private void leftRotate(int[] arr, int d, int n) {
-//        for (int i = 0; i < d; i++) {
-//            leftRotateOnce(arr, n);
-//        }
-//        for (int i = 0; i <= n; i++) {
-//            System.out.print(arr[i] + " ");
-//        }
 
         int[] temp = new int[d];
 

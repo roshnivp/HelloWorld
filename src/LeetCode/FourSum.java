@@ -40,7 +40,6 @@ public class FourSum {
                     }else{
                         r--;
                     }
-
                 }
             }
         }

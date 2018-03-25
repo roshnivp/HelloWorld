@@ -15,6 +15,7 @@ public class kthSmallestMatrix {
             }
             if(count < k) lo = mid + 1;
             else hi = mid;
+
         }
         return lo;
     }

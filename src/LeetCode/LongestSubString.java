@@ -14,7 +14,7 @@ public class LongestSubString {
         int lengthOfLongestSubsequence(String s) {
            // HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
             List<Character> hm = new ArrayList<>();
-            int max=0, start =0, end=0;
+            int max = 0, start = 0, end = 0;
 
             for (int i = 0; i < s.length(); i++) {
                 if (hm.contains(s.charAt(i))) {
@@ -37,7 +37,7 @@ public class LongestSubString {
                 }
                 hm.add(s.charAt(i));
                 end++;
-                max= max < end-start? end-start:max;
+                max= max < end-start? (end-start):max;
             }
             return max;
         }

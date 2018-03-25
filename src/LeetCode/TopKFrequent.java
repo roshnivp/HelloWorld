@@ -26,11 +26,13 @@ public class TopKFrequent {
          Set<Map.Entry<Integer, Integer>> set = hm.entrySet();
          List<Map.Entry<Integer, Integer>> list = new ArrayList<Map.Entry<Integer, Integer>>(set);
 
-         Collections.sort( list, new Comparator<Map.Entry<Integer, Integer>>()
+         Collections.sort( list, new Comparator()
          {
-             public int compare( Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2 )
+             public int compare(Object o1, Object o2 )
              {
-                 return (o2.getValue()).compareTo( o1.getValue() );
+                 Integer v1 = (Integer)((Map.Entry)o1).getValue();
+                 Integer v2 = (Integer)((Map.Entry)o2).getValue();
+                 return (v2).compareTo( v1);
              }
          } );
 
@@ -45,10 +47,10 @@ public class TopKFrequent {
          }        return result; // if(list.size() >k) return (list.get(k)).getKey(); -- kth frequent
     }
     public static void main(String[] args){
-        int[] arr=new int[]{1,2,5,2,6,1,2,1,1};
-        int k=2;
-        TopKFrequent tk=new TopKFrequent();
-        List<Integer> result=tk.topKFrequent(arr,k);
+        int[] arr = new int[]{1,2,5,2,6,1,2,1,1};
+        int k = 2;
+        TopKFrequent tk = new TopKFrequent();
+        List<Integer> result = tk.topKFrequent(arr,k);
         System.out.print(result);
     }
 }

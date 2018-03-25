@@ -15,7 +15,7 @@ public class MaximumBinaryTree {
         TreeNode node= new TreeNode(0);
         if(n==0)  return null;
 
-        if(n==1){
+        if(n == 1){
             node.val = max;
             return node;
         }
@@ -29,9 +29,9 @@ public class MaximumBinaryTree {
         }
 
         node.val = max;
-        if(index >=1)
+        if(index > 0)
         node.left = constructMaximumBinaryTree(Arrays.copyOfRange(nums, 0, index));
-        if(index<n-1)
+        if(index < n-1)
         node.right = constructMaximumBinaryTree(Arrays.copyOfRange(nums, index+1, n));
 
 

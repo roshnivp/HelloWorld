@@ -9,15 +9,19 @@ import java.util.List;
  * Created by Roshni Velluva Puthanidam on 16/01/18.
  */
 public class findKClosest {
+//    condition :Array should be sorted
+//    1. find the element which is very close to x; -- Binary Search
+//    2. from the closest element move left and right to get the next closest elements;
+
     static List<Integer> findClosestElements(int[] arr, int k, int x) {
         int high = arr.length -1;
         int low =0;
-        int pivot = binarySearch(arr,x,high,low);
+        int pivot = binarySearch(arr,x,high,low); // find closest element
         int r= pivot+1;
         if(arr[pivot] == x) pivot --;
         List<Integer> res = new ArrayList<>();
         int count =0;
-        while(count<= k && pivot >=0 && r<=high ){
+        while(count <= k && pivot >= 0 && r <= high ){
             if(Math.abs(x- arr[pivot]) <= Math.abs(x-arr[r])){
                 res.add(arr[pivot]);
                 pivot--;
