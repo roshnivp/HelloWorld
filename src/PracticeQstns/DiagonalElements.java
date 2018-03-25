@@ -35,13 +35,11 @@ public class DiagonalElements {
         {
             TreeNode node = q.poll();
 
-            if(node==null){
+            if(node == null){
                 q.add(null);
                 System.out.println();
                 node= q.poll();
                 if(node==null) break;
-
-
             }
             while(node!=null){
                 System.out.print(node.val);
@@ -50,7 +48,6 @@ public class DiagonalElements {
                     q.add(node.left);
                 }
                 node = node.right;
-
 
             }
         }

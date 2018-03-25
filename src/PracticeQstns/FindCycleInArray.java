@@ -10,19 +10,21 @@ public class FindCycleInArray {
     }
 
     static boolean isCycle(int[] arr){
-        int p= 0;
-        int q= 0;
+        int p= arr[0];
+        int q= arr[0];
+
+
         while(true){
             if(p<0 || p >=arr.length || q< 0 ||q>=arr.length){ //boundary condition
                 return false;
             }
             p = arr[p];
-            if(p==q) return true;
+            if(p == q) return true;
             if(p< 0 || p >= arr.length) return false;
             p = arr[p];
-            if(p== q) return true;
-            q= arr[q];
-            if(p==q) return true;
+            if(p == q) return true;
+            q = arr[q];
+            if(p == q) return true;
         }
 
     }

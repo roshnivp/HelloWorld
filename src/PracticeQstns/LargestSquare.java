@@ -26,13 +26,13 @@ public class LargestSquare {
 
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                if(i==0 || j==0){
+                if(i == 0 || j == 0){
                     resultMat[i][j] = mat[i][j];
                 }
-                else if(mat[i][j]==1){
+                else if(mat[i][j] == 1){
                     resultMat[i][j] = min(mat[i][j-1], mat[i-1][j], mat[i-1][j-1]) +1;
                 }
-                if(result<resultMat[i][j] ){
+                if(result < resultMat[i][j] ){
                     result = resultMat[i][j];
                 }
             }
