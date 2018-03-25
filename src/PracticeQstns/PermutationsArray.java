@@ -25,9 +25,7 @@ public class PermutationsArray {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         if(nums.length == 0) return ls;
-
         permuteNumbers(nums,0,nums.length);
-
         return  ls;
 
 

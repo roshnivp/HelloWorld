@@ -147,7 +147,7 @@ public class BinarySearchTree<T extends Comparable<T>>{
         {
             int leftHeight = height(root.getLeft());
             int rightHeight = height(root.getRight());
-            return Math.abs(leftHeight - rightHeight) <= 1;
+            return Math.abs(leftHeight - rightHeight) <= 1 && isBalancedBST(root.getLeft()) && isBalancedBST(root.getRight());
         }
     }
       
