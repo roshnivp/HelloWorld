@@ -7,6 +7,7 @@ public class MissingTwoNumbers {
 
     static int[] missingNumbers(int[] arr){
         int size = arr.length+2; // two numbers are missing
+
         //With using extra space
         int[] new_arr = new int[arr.length+2];
         int[] result = new int[2];
