@@ -7,37 +7,54 @@ public class MissingTwoNumbers {
 
     static int[] missingNumbers(int[] arr){
         int size = arr.length+2; // two numbers are missing
-
-        int totalSum = size * (size+1) /2;
-        int arraySum = 0;
-
+        //With using extra space
+        int[] new_arr = new int[arr.length+2];
+        int[] result = new int[2];
+        int k=0;
         for(int i:arr){
-            arraySum+= i;
+            new_arr[i-1] =1;
         }
-
-        int pivot = (totalSum - arraySum )/2 ;
-        int tolalLeftXor = 0;
-        int totalRightXor = 0;
-        int arrayLeftXor = 0;
-        int arrayRightXor = 0;
-
-        for(int i=1; i<=pivot; i++){
-            tolalLeftXor ^=i;
-        }
-        for(int i=pivot+1; i<=size; i++){
-            totalRightXor ^=i;
-        }
-
-        for(int i:arr){
-            if(i<= pivot){
-                arrayLeftXor ^=i;
-            }
-            else{
-                arrayRightXor ^=i;
+        for(int i=0; i<new_arr.length; i++){
+            if(new_arr[i]==0){
+                result[k] = i+1;
+                k++;
             }
         }
 
-        return new int[]{tolalLeftXor ^ arrayLeftXor, totalRightXor ^ arrayRightXor};
+//Without using extra space
+
+//        int totalSum = size * (size+1) /2;
+//        int arraySum = 0;
+//
+//        for(int i:arr){
+//            arraySum+= i;
+//        }
+//
+//        int pivot = (totalSum - arraySum )/2 ;
+//        int tolalLeftXor = 0;
+//        int totalRightXor = 0;
+//        int arrayLeftXor = 0;
+//        int arrayRightXor = 0;
+//
+//        for(int i=1; i<=pivot; i++){
+//            tolalLeftXor  ^=i;
+//        }
+//
+//        for(int i=pivot+1; i<=size; i++){
+//            totalRightXor ^=i;
+//        }
+//
+//        for(int i:arr){
+//            if(i<= pivot){
+//                arrayLeftXor ^=i;
+//            }
+//            else{
+//                arrayRightXor ^=i;
+//            }
+//        }
+//
+//        return new int[]{tolalLeftXor ^ arrayLeftXor, totalRightXor ^ arrayRightXor};
+        return result;
 
 
     }
