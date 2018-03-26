@@ -26,14 +26,13 @@ public class QueueUsingStack {
 
     static void recurse(){
 
-        if(st1.size()==1){
+        if(st1.size() == 1){
             ans =st1.pop();
-           return ;
+           return;
         }
         int curVal = st1.pop();
         recurse();
         st1.push(curVal);
-
 
     }
     static void enqueue(int x){

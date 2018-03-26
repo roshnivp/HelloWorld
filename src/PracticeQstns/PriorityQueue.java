@@ -94,6 +94,7 @@ public class PriorityQueue {
             pq.push(4);
             pq.push(1);
             System.out.print(pq.pop());
+            System.out.print(pq.pop());
         }
 
 }
