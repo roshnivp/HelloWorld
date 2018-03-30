@@ -39,7 +39,7 @@ public class DiagonalElements {
                 q.add(null);
                 System.out.println();
                 node= q.poll();
-                if(node==null) break;
+                if(node == null) break;
             }
             while(node!=null){
                 System.out.print(node.val);

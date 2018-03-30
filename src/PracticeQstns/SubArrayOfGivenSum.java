@@ -20,10 +20,10 @@ public class SubArrayOfGivenSum {
 
     static int[] subArrayOfGivenSum(int[] arr, int n, int sum){
 
-        for(int i=0; i<n; i++){
+        for(int i=0; i<n-1; i++){
             int current_sum = arr[i];
 
-            for(int j = i+1; j<=n; j++){
+            for(int j = i+1; j<n; j++){
 
                 if(sum !=0) {
 
@@ -34,7 +34,6 @@ public class SubArrayOfGivenSum {
                 else{
                     if(current_sum == sum) return Arrays.copyOfRange(arr, i, j);
                 }
-                if(j==n) break;
 
                 current_sum = current_sum + arr[j];
             }

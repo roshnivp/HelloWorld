@@ -78,8 +78,8 @@ public class PostOrder_TreeTraversal {
         Tree_Node root = new Tree_Node(1);
         root.left = new Tree_Node(2);
         root.right = new Tree_Node(3);
-//        root.left.left = new Tree_Node(4);
-//        root.left.right = new Tree_Node(5);
+        root.left.left = new Tree_Node(4);
+        root.left.right = new Tree_Node(5);
 //        root.right.left = new Tree_Node(6);
 //        root.right.right = new Tree_Node(7);
 

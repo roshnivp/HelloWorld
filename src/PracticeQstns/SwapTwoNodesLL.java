@@ -22,7 +22,6 @@ public class SwapTwoNodesLL {
         Node p = head;
         Node prev = null;
 
-
         while(p!=null && p.data!=x){
             prev = p;
             p = p.next;

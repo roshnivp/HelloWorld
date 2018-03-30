@@ -52,6 +52,6 @@ public class PallindromePartitionMinCut {
     }
     public static void main(String args[])
     {
-        System.out.println(minCut("aab"));
+        System.out.println(minCut("aabc"));
     }
 }

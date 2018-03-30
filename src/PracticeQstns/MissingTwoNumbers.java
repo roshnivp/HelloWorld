@@ -16,7 +16,7 @@ public class MissingTwoNumbers {
             new_arr[i-1] =1;
         }
         for(int i=0; i<new_arr.length; i++){
-            if(new_arr[i]==0){
+            if(new_arr[i] == 0){
                 result[k] = i+1;
                 k++;
             }
