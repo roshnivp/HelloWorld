@@ -9,9 +9,9 @@ import java.util.Stack;
  * Created by Roshni Velluva Puthanidam on 13/10/17.
  */
 public class PermutationOfString {
-    List<String> hs= new ArrayList<>();
+    HashSet<String> hs= new HashSet<>();
     public static void main(String[] args){
-        String s="abc";
+        String s="abcd";
         List<String> result= new ArrayList<>();
         PermutationOfString ps= new PermutationOfString();
         result= ps.allPermutation(s,0,s.length());
@@ -27,7 +27,7 @@ public class PermutationOfString {
         char temp=' ';
 
         if(i == n-1){
-            if(!hs.contains(s))hs.add(s);
+            hs.add(s);
         }
         else{
             for(int j=i; j<n; j++){
@@ -41,8 +41,8 @@ public class PermutationOfString {
                 strChar[j]=temp;
             }
         }
-
-        return hs;
+        List<String> ls = new ArrayList<>(hs);
+        return ls;
 
     }
 }

@@ -9,8 +9,6 @@ import java.util.Stack;
  */
 public class BSTtoLL {
     public void flattenLL(TreeNode root) {
-
-        //using pre-order tree traversal
         if(root==null){
             return;
         }

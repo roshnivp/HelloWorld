@@ -11,7 +11,7 @@ public class PallindromeNumber {
     }
 
     static boolean isPallindrome(int num){
-        if(num <0 || num/10 ==0 || num==0) return false;
+        if(num<0 || num/10 ==0 || num==0) return false;
         int reverseNum = 0;
 
         while(num > reverseNum){ // reverse last half of the numbers

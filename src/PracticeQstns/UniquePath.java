@@ -3,7 +3,7 @@ package PracticeQstns;
 /**
  * Created by Roshni Velluva Puthanidam on 04/10/17.
  */
-public class UniqueMinCostPath {
+public class UniquePath {
     static int minCost(int cost[][], int m, int n)
     {
         int i, j;

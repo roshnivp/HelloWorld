@@ -71,6 +71,7 @@ public class AddTwoLinkedList
         int sum = n.val + m.val + carry;
         carry = sum / 10;
         sum = sum % 10;
+
         // Push this to result list
         push(sum, 3);
 

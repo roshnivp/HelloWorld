@@ -25,13 +25,16 @@ public class SubArraySumZero {
         for(int i=0; i<n; i++){
 
             Integer start_index = hm.get(sum);
-            if(start_index == null){
+            if(start_index==null && i ==n){
+                return null;
+            }
+            else if(start_index == null){
                 hm.put(sum,i);
             }
             else{
                 return Arrays.copyOfRange(arr,start_index,i);
             }
-            sum = sum+arr[i];
+            sum = sum + arr[i];
         }
         return null;
     }

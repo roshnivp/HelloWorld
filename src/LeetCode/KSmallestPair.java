@@ -50,10 +50,9 @@ public class KSmallestPair {
 
             int k = 4;
             List<int[]> ans =kSmallestPair( arr1, n1, arr2, n2, k);
-            System.out.print(ans.toString());
-//            for(int i=0; i<ans.size(); i++){
-//                System.out.println(ans.get(i).toString());
-//            }
+            for(int i=0; i<ans.size(); i++){
+                System.out.println(ans.get(i));
+            }
         }
 
 }

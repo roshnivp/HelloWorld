@@ -9,13 +9,14 @@ public class ReverseDL {
          if(root.next ==null) return root;
          DLNode current = root;
          DLNode temp =null;
-         while(current!=null){
+         while(current != null){
+             //swap between the prev and next nodes
              temp = current.prev;
              current.prev = current.next;
              current.next = temp;
              current = current.prev;
          }
-         if(temp != null) temp = temp.prev;
+         if(temp!=null) temp = temp.prev;
          return temp;
      }
 

@@ -30,7 +30,7 @@ public class RemoveDuplicatesLL {
         llist.push(4);
         llist.push(5);
         llist.push(6);
-        llist.push(6);
+        llist.push(5);
         llist.push(8);
         llist.push(8);
         llist.push(8);
@@ -41,7 +41,7 @@ public class RemoveDuplicatesLL {
         /*Create loop for testing */
       //  llist.head.next.next.next.next = llist.head;
 
-        Node temp =llist.removeDuplicatesFromSortedLL();
+        Node temp =llist.removeDuplicates();
         while(temp!=null){
             System.out.println(temp.data);
             temp = temp.next;
@@ -51,19 +51,15 @@ public class RemoveDuplicatesLL {
 
     Node removeDuplicatesFromSortedLL(){
 
-        Node p = head;
-        Node prev = null;
+        Node p =head;
+        Node temp =head;
 
-        while(p != null){
-
-            if(prev ==null || prev.data != p.data){
-                prev = p;
-                p= p.next;
+        while(p!=null && p.next!=null){
+            if(p.data!=p.next.data){
+                p = p.next;
             }
             else{
-
-                prev.next=  p.next;
-                p = prev.next;
+                p.next = p.next.next;
             }
         }
         return head;
@@ -73,7 +69,7 @@ public class RemoveDuplicatesLL {
     Node removeDuplicates(){
         Set<Integer> hashSet= new HashSet<>();
         Node temp = head;
-        Node prev = null;
+        Node prev=null;
 
         while(temp!=null && temp.next!=null){
             if(!hashSet.contains(temp.data)){

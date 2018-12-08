@@ -7,7 +7,7 @@ import java.util.regex.*;
 /**
  * Created by Roshni Velluva Puthanidam on 18/01/18.
  */
-public class FirstOccurence {
+public class Solution {
     static int firstOccurrence(String s, String x) {
 
         if(x==null) return -1;
@@ -46,14 +46,12 @@ public class FirstOccurence {
         }
         return count;
     }
-
     public static void main(String[] args) throws IOException {
 
-        String a = "abcdecdeffg";
+        String a = "abcdefg";
         String b = "cdef";
-        System.out.print(a.indexOf(b));
-        //int res = ocuurenceOfAPattern(a, b);
-        //System.out.print(res);
+        int res = firstOccurrence(a, b);
+        System.out.print(res);
     }
 }
 

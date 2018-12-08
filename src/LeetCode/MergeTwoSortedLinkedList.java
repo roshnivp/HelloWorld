@@ -27,8 +27,8 @@ public class MergeTwoSortedLinkedList {
         }
         while(p != null ){
             s.next = p;
-            s = s.next;
-            p = p.next;
+            s= s.next;
+            p= p.next;
         }
 
         while(q!= null){
