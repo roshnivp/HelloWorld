@@ -61,5 +61,6 @@ public class PallindromeMinCut {
             }
         }
         return true;
+
     }
 }
