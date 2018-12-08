@@ -10,9 +10,9 @@ import java.util.List;
  */
 public class ShortestArrayWindow {
     static int solution(int[] A) {  List<Integer> minWindow = new ArrayList<>();
-        int[] ans;
         HashMap<Integer, Integer> unique = new HashMap<>();
         List<Integer> list = new ArrayList<>();
+
         for (int i = 0; i < A.length; i++) {
             if(!(list.contains(A[i]))){
                 list.add(A[i]);
@@ -20,11 +20,9 @@ public class ShortestArrayWindow {
         }
         for (int i = 0; i < list.size(); i++) {
             int c = list.get(i);
-            if (!unique.containsKey(c))
-                unique.put(c, 1);
-            else
-                unique.put(c, unique.get(c) + 1);
+            unique.put(c, 1);
         }
+
         HashMap<Integer, Integer> found = new HashMap<>();
         int foundCounter = 0;
         int start = 0;
@@ -36,8 +34,6 @@ public class ShortestArrayWindow {
             int c = A[end];
             if (unique.containsKey(c)) {
                 if (found.containsKey(c)) {
-                    if (found.get(c) < unique.get(c))
-                        foundCounter++;
                     found.put(c, found.get(c) + 1);
                 } else {
                     found.put(c, 1);

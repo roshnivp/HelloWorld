@@ -34,7 +34,7 @@ public class SubArraySumZero {
             else{
                 return Arrays.copyOfRange(arr,start_index,i);
             }
-            sum = sum+arr[i];
+            sum = sum + arr[i];
         }
         return null;
     }

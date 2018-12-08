@@ -11,7 +11,7 @@ public class AnagramOrNot {
         char[] words= word.toCharArray();
         for(char c:words){
             int index= anagram.indexOf(c);
-            if(index!=-1){
+            if(index !=-1){
                 anagram = anagram.substring(0,index) + anagram.substring(index+1);
             }
             else{
