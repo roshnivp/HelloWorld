@@ -28,7 +28,7 @@ public class AnagramNumberRequired {
 
                     char str = (s.charAt(x));
                     int index = r.indexOf(str);
-                    if(index ==-1){
+                    if(index == -1){
                         continue;
                     }
                     else {

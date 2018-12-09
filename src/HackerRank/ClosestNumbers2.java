@@ -13,7 +13,6 @@ public class ClosestNumbers2 {
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named matrixZero. */
         Scanner in = new Scanner(System.in);
-        //HashMap<List<Integer>,Integer> hm=new HashMap<List<Integer>,Integer>();
         int n = in.nextInt();
         int[] arr = new int[n];
 
@@ -25,19 +24,18 @@ public class ClosestNumbers2 {
         List<List<Integer>> res= new ArrayList<>();
         try {
             for (int k = 0; k < n - 1; k++) {
-                // List<Integer> ls=new ArrayList<>();
                 int abs = Math.abs(arr[k] - arr[k + 1]);
+                List<Integer> ls = new ArrayList<Integer>();
                 if (diff > abs) {
-                    List<Integer> ls = new ArrayList<Integer>();
+                    ls.clear();
                     res.clear();
                     diff = abs;
                     ls.add(arr[k]);
                     ls.add(arr[k + 1]);
                     res.add(ls);
-                    // hm.put(ls,abs);
+
                 } else if (diff == abs) {
                     diff = abs;
-                    List<Integer> ls = new ArrayList<Integer>();
                     ls.add(arr[k]);
                     ls.add(arr[k + 1]);
                     res.add(ls);

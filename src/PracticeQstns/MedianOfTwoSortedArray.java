@@ -42,7 +42,7 @@ public class MedianOfTwoSortedArray {
             return (double)new_array[mid] ;
         }
         else{
-            return (new_array[mid] +new_array[mid+1])/2.0;
+            return (new_array[mid] + new_array[mid+1])/2.0;
         }
     }
     public static void main(String[] args){

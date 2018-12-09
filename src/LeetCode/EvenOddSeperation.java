@@ -22,7 +22,6 @@ public class EvenOddSeperation {
             if(arr[i]%2 == 0){
                 swap(arr,i,j);
                 j++;
-
             }
             i++;
         }

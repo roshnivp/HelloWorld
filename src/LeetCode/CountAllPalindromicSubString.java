@@ -37,7 +37,7 @@ public class CountAllPalindromicSubString {
             for(int i=0; i<n-diff; i++){
                 int j= i + diff ;
 
-                if(s.charAt(i)==s.charAt(j) && isPallindrome[i+1][j-1]){
+                if(s.charAt(i) == s.charAt(j) && isPallindrome[i+1][j-1]){
                     isPallindrome[i][j]=true;
 
                     if(max < diff+1){

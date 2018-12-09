@@ -6,7 +6,7 @@ import java.util.Stack;
 /**
  * Created by Roshni Velluva Puthanidam on 16/02/17.
  */
-public class ValidParanthesis {
+public class  ValidParanthesis {
     public static boolean isValid(String s) {
         HashMap<Character, Character> map = new HashMap<Character, Character>();
         map.put('(', ')');

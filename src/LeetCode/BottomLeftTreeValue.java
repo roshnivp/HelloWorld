@@ -8,8 +8,8 @@ import java.util.Queue;
  */
 public class BottomLeftTreeValue {
     public int findBottomLeftValue(TreeNode root) {
-        Queue<TreeNode> q= new LinkedList<>();
-        TreeNode node =null;
+        Queue<TreeNode> q = new LinkedList<>();
+        TreeNode node = null;
 
         q.add(root);
 
