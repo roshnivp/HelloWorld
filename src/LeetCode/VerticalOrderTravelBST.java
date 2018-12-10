@@ -10,7 +10,7 @@ public class VerticalOrderTravelBST {
 
     public  void verticalTraversal(TreeNode root){
         if(root==null) return ;
-        int hd = 0;
+        int hd= 0;
         updateHashMap(root,hd);
         for(Map.Entry<Integer,List<Integer>> hm:map.entrySet()){
             System.out.println(hm.getValue().toString());

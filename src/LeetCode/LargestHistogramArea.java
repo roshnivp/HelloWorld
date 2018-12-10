@@ -16,8 +16,8 @@ public class LargestHistogramArea
         // Create an empty stack. The stack holds indexes of hist[] array
         // The bars stored in stack are always in increasing order of their
         // heights.
-        if(n == 0) return 0;
-        if(n == 1) return hist[0];
+        if(n==0) return 0;
+        if(n==1) return hist[0];
         Stack<Integer> s = new Stack<>();
 
         int max_area = 0; // Initialize max area
@@ -29,11 +29,8 @@ public class LargestHistogramArea
         while (i < n)
         {
             // If this bar is higher than the bar on top stack, push it to stack
-            if (s.empty() || hist[s.peek()] <= hist[i]){
-                s.push(i);
-                i++;
-            }
-
+            if (s.empty() || hist[s.peek()] <= hist[i])
+                s.push(i++);
 
                 // If this bar is lower than top of stack, then calculate area of rectangle
                 // with stack top as the smallest (or minimum height) bar. 'i' is

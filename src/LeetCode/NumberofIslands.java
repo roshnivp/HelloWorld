@@ -20,6 +20,7 @@ public class NumberofIslands {
             for(int j=0; j<n; j++){
                 if(grid[i][j]==1 && !visited[i][j]){
                     numberOfIslands +=1;
+
                     makeNeighboursVisited(i,j,grid,visited);
                 }
             }

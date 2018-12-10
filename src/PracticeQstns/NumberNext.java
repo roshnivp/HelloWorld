@@ -25,6 +25,7 @@ public class NumberNext {
             String ansMax="";
             String ansMin="";
             for(int i=0; i<result.size(); i++){
+
                 String val = result.get(i);//.substring(0,2)
                 Integer num = Integer.valueOf(S);//.substring(0,2)
 
@@ -32,13 +33,16 @@ public class NumberNext {
                 int min= Integer.MAX_VALUE;
                 int max = Integer.MIN_VALUE;
 
-                int abs = num - ans;
+                int abs = num -ans;
                 if(num < ans && ans < 2400){
                     withinRange.add(ans);
+
                     if(min > abs && abs >0 ){
                         min = abs;
                         ansMin = String.valueOf(ans);
                     }
+
+
                 }
                 else{
                     outsideRange.add(ans);
@@ -46,6 +50,7 @@ public class NumberNext {
                         max = abs;
                         ansMax= String.valueOf(ans);
                     }
+
                 }
             }
             if(!withinRange.isEmpty()) return ansMin;
@@ -55,13 +60,15 @@ public class NumberNext {
 
 
         void permuteString(String str,int i,int n){
-            char[] strChar = str.toCharArray();
+            char[] strChar =str.toCharArray();
             char temp=' ';
-            if(i == n){
+            if(i==n){
                 if(!result.contains(str)) result.add(str);
+
+
             }
             else{
-                for(int j = i; j<=n; j++){
+                for(int j=i; j<=n; j++){
                     temp= strChar[i];
                     strChar[i] = strChar[j];
                     strChar[j]= temp;

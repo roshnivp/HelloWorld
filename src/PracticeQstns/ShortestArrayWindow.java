@@ -10,12 +10,17 @@ import java.util.List;
  */
 public class ShortestArrayWindow {
     static int solution(int[] A) {  List<Integer> minWindow = new ArrayList<>();
-        int[] ans;
         HashMap<Integer, Integer> unique = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+
         for (int i = 0; i < A.length; i++) {
-            int c = A[i];
-            if (!unique.containsKey(c))
-                unique.put(c, 1);
+            if(!(list.contains(A[i]))){
+                list.add(A[i]);
+            }
+        }
+        for (int i = 0; i < list.size(); i++) {
+            int c = list.get(i);
+            unique.put(c, 1);
         }
 
         HashMap<Integer, Integer> found = new HashMap<>();
@@ -24,24 +29,31 @@ public class ShortestArrayWindow {
         int end = 0;
         int min = Integer.MAX_VALUE;
 
+        //
         while (end < A.length) {
-                int c = A[end];
+            int c = A[end];
+            if (unique.containsKey(c)) {
                 if (found.containsKey(c)) {
                     found.put(c, found.get(c) + 1);
-                }
-                else {
+                } else {
                     found.put(c, 1);
                     foundCounter++;
                 }
-
-            if (foundCounter == unique.size()) {
+            }
+            if (foundCounter == list.size()) {
+                //When foundCounter equals to T.length(), in other words, found all characters.
                 int sc = A[start];
-                while (found.get(sc) > unique.get(sc)) {
-                    found.put(sc, found.get(sc) - 1);
+                while (!found.containsKey(sc) || found.get(sc) > unique.get(sc)) {
+                    if (found.containsKey(sc) && found.get(sc) > unique.get(sc))
+                        found.put(sc, found.get(sc) - 1);
                     start++;
                     sc = A[start];
                 }
                 if (end - start + 1 < min) {
+                    //int length = end-start;
+                   // ans = new int[length];
+                   // ans = Arrays.copyOfRange(A, start, end + 1);
+                    // minWindow = Arrays.asList(ans);
                     min = end - start + 1;
                 }
             }
@@ -51,6 +63,6 @@ public class ShortestArrayWindow {
 
     }
     public static void main(String[] args){
-        System.out.println(solution(new int[]{2,3,4,3,2,2,1,3}));
+        System.out.println(solution(new int[]{2,1,1,3,2,1,1,3}));
     }
 }

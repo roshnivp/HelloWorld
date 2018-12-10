@@ -12,7 +12,7 @@ class MinSum
     public static long solve(int[] a)
     {
         // min Heap
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((c,b)-> c-b);
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 
         // to store the 2 numbers formed by array elements to
         // minimize the required sum

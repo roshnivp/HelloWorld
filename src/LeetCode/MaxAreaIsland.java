@@ -19,9 +19,20 @@ public class MaxAreaIsland {
 
     }
     static int area_of_neighbours(int x,int y,int[][] grid){
-        if(x >= 0 && x < grid.length && y >= 0 && y < grid[0].length && grid[x][y]==1){
+        if(x>=0 && x<grid.length && y>=0 && y<grid[0].length && grid[x][y]==1){
             grid[x][y] = 0;
-           return 1 + area_of_neighbours(x-1,y,grid)+area_of_neighbours(x+1,y,grid)+area_of_neighbours(x,y-1,grid)+area_of_neighbours(x,y+1,grid);
+            int[] row = new int[]{-1,1,0,0};
+            int[] col = new int[]{0,0,-1,1};
+
+
+//            for(int k=0; k<4; k++){
+//                int i= x+row[k];
+//                int j= y+row[k];
+//                sum +=1;
+//                area_of_neighbours(i,j,grid,sum);
+//            }
+
+           return 1+area_of_neighbours(x-1,y,grid)+area_of_neighbours(x+1,y,grid)+area_of_neighbours(x,y-1,grid)+area_of_neighbours(x,y+1,grid);
         }
         return 0;
     }
