@@ -15,8 +15,8 @@ public class ReverseDL {
              current.next = temp;
              current = current.prev;
          }
-         if(temp != null) temp = temp.prev;
-         return temp;
+         if(temp != null) root = temp.prev;
+         return root;
      }
 
 }

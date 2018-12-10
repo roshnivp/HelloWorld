@@ -22,7 +22,7 @@ public class LongestSubString {
                 }
                 hm.add(s.charAt(i));
                 end++;
-                max = end-start;
+                max = end - start;
             }
             return max;
 
