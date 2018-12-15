@@ -5,23 +5,24 @@ package LeetCode;
  */
 public class LongestIncreasingPath {
 
+    static int  max=0;
+
     static int longestIncreasingPath(int[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0)
             return 0;
 
-        int[] max = new int[1];
         for(int i=0; i<matrix.length; i++)    {
             for(int j=0; j<matrix[0].length; j++){
-                dfs(matrix, i, j, max, 1);
+                dfs(matrix, i, j,  1);
             }
         }
 
-        return max[0];
+        return max;
     }
 
-    static void dfs(int[][] matrix, int i, int j, int[] max, int len){
+    static void dfs(int[][] matrix, int i, int j,int len){
 
-        max[0] = Math.max(max[0], len);
+        max = Math.max(max, len);
 
         int m = matrix.length;
         int n = matrix[0].length;
@@ -34,7 +35,7 @@ public class LongestIncreasingPath {
             int y = j + dy[k];
 
             if(x >= 0 && x< m && y >= 0 && y< n && matrix[x][y] > matrix[i][j]){
-                dfs(matrix, x, y, max, len+1);
+                dfs(matrix, x, y,  len+1);
             }
         }
     }
@@ -47,7 +48,7 @@ public class LongestIncreasingPath {
                 { 1, 2, 3, 4 },
                 { 2, 2, 3, 4 },
                 { 3, 2, 3, 4 },
-                { 4, 5, 6, 7 },
+                { 4, 5, 2, 7 },
         };
         int n = 4, m = 4;
         System.out.println(longestIncreasingPath(mat));
