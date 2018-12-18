@@ -1,5 +1,4 @@
 package LeetCode;
-
 import java.util.Arrays;
 
 public class firstAndLastPositionOfTarget {
@@ -46,8 +45,6 @@ public class firstAndLastPositionOfTarget {
     public static void main(String[] args){
 
         int[] result =searchRange(new int[]{1,4},4);
-
-        System.out.println(Arrays.toString(result));
 
     }
 }

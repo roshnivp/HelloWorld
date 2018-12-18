@@ -28,11 +28,12 @@ public class MaxSum {
         List<Map.Entry<Integer, Integer>> list = new ArrayList<>(set);
 
 
-        Collections.sort( list, new Comparator<Map.Entry<Integer, Integer>>()
+        Collections.sort( list, new Comparator()
         {
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2 )
-            {
-                return (o1.getValue()).compareTo( o2.getValue() );
+            public int compare(Object o1, Object o2){
+                Integer v1 = (Integer)((Map.Entry)o1).getValue();
+                Integer v2 = (Integer)((Map.Entry)o2).getValue();
+                return v1.compareTo(v2);
             }
         } );
 

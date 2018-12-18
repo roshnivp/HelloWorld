@@ -21,12 +21,12 @@ public class PallindromeSubString
         boolean[][] isPallindrome = new boolean[n][n];
 
         for(int i=0; i<n; i++){
-            isPallindrome[i][i] =true;
+            isPallindrome[i][i] = true;
             count++;
         }
 
         for(int i=0; i<n-1; i++){
-            if(s.charAt(i)==s.charAt(i+1)){
+            if(s.charAt(i) == s.charAt(i+1)){
                 isPallindrome[i][i+1] = true;
                 count++;
             }
@@ -36,7 +36,7 @@ public class PallindromeSubString
             for(int i=0; i<n-diff; i++){
                 int j= i+ diff;
 
-                if(s.charAt(i)==s.charAt(j) && isPallindrome[i+1][j-1]){
+                if(s.charAt(i) == s.charAt(j) && isPallindrome[i+1][j-1]){
                     isPallindrome[i][j]=true;
                     count ++;
                 }
@@ -52,7 +52,7 @@ public class PallindromeSubString
     // Driver Method
     public static void main(String[] args)
     {
-        String str = "abc";
+        String str = "aba";
         System.out.println(CountPS(str, str.length()));
     }
 }

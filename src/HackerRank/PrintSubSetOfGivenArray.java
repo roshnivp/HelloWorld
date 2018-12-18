@@ -20,10 +20,6 @@ public class PrintSubSetOfGivenArray {
     private static void toBin(int i, int n) {
         Set<String> hashset = new HashSet<String>();
         if(i == n){
-//            for(int j = 0; j < n; j++){
-//                System.out.print(arr[j]);
-//            }
-           // System.out.print("\t->{");
             for(int j = 0; j < n; j++){
                 if(arr[j] == 1){
                     hashset.add(""+set.charAt(j));
