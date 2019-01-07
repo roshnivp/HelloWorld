@@ -30,7 +30,7 @@ public class combinations {
         // at index will make a combination with remaining elements
         // at remaining positions
 
-        for(int i= start; i<=end && end-i+1>=k-index; i++){
+        for(int i= start; i<=end ; i++){
             temp_arr[index] = arr[i];
             combinationsOfElements(arr, temp_arr, i+1, end, index+1, k);
         }

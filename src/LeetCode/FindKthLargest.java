@@ -1,12 +1,20 @@
-package PracticeQstns;
+package LeetCode;
 
-/**
- * Created by Roshni Velluva Puthanidam on 16/03/17.
- */
-/* Java program for Merge Sort */
-class MergeSort
-{
-    // Merges two subarrays of arr[].
+import java.util.Arrays;
+
+public class FindKthLargest {
+    public int findKthLargest(int[] nums, int k) {
+        if(nums.length==0 || k>nums.length) return -1;
+        if(k==1 && nums.length==1) return nums[0];
+
+        int start=0;
+        int end = nums.length-1;
+
+        sort(nums,start,end);
+        System.out.println(Arrays.toString(nums));
+        return nums[k-1];
+
+    }
     // First subarray is arr[l..m]
     // Second subarray is arr[m+1..r]
     void merge(int arr[], int l, int m, int r)
@@ -36,7 +44,7 @@ class MergeSort
         //System.out.println(l);
         while (i < n1 && j < n2)
         {
-            if (L[i] <= R[j])
+            if (L[i] >= R[j])
             {
                 arr[k] = L[i];
                 i++;
@@ -83,28 +91,8 @@ class MergeSort
             merge(arr, l, m, r);
         }
     }
-
-    /* A utility function to print array of size n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Driver method
-    public static void main(String args[])
-    {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-
-        System.out.println("Given Array");
-        printArray(arr);
-
-        MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length-1);
-
-        System.out.println("\nSorted array");
-        printArray(arr);
+    public static void main(String[] args){
+        FindKthLargest fk= new FindKthLargest();
+        System.out.println(fk.findKthLargest(new int[]{3,5,2,7,6},2));
     }
 }
