@@ -5,8 +5,8 @@ import java.util.*;
 /**
  * Created by Roshni Velluva Puthanidam on 08/12/17.
  */
-public class VerticalOrderTravelBST {
-    Map<Integer,List<Integer>> map = new HashMap<>();
+public class VerticalOrderAndBottomViewTravelBST {
+    Map<Integer,List<Integer>> map = new TreeMap<>();
 
     public  void verticalTraversal(TreeNode root){
         if(root==null) return ;
@@ -33,9 +33,21 @@ public class VerticalOrderTravelBST {
          updateHashMap(node.left, hd-1);
          updateHashMap(node.right,hd+1);
     }
+    public void bottomViewBST(){
+        for(Map.Entry<Integer,List<Integer>> hm:map.entrySet()){
+            List<Integer> set = hm.getValue();
+            System.out.print(set.get(set.size()-1)+" ");
+        }
+    }
 
+    public void topViewBST(){
+        for(Map.Entry<Integer,List<Integer>> hm:map.entrySet()){
+            List<Integer> set = hm.getValue();
+            System.out.print(set.get(0)+" ");
+        }
+    }
     public static void main(String[] args){
-        VerticalOrderTravelBST bst = new VerticalOrderTravelBST();
+        VerticalOrderAndBottomViewTravelBST bst = new VerticalOrderAndBottomViewTravelBST();
         TreeNode node = new TreeNode(8);
         node.left=new TreeNode(5);
         node.left.right = new TreeNode(6);
@@ -45,6 +57,11 @@ public class VerticalOrderTravelBST {
         node.right.right = new TreeNode(12);
         node.right.left = new TreeNode(9);
         bst.verticalTraversal(node);
+        System.out.println("Botton View of Tree");
+        bst.bottomViewBST();
+        System.out.println("");
+        System.out.println("Top View of Tree");
+        bst.topViewBST();
     }
 
 }
