@@ -6,8 +6,8 @@ import java.util.HashSet;
  * Created by Roshni Velluva Puthanidam on 12/11/17.
  */
 public class RemoveDuplicatesLinkedList {
-    public void removeDuplicates(Node node){
-        Node prev=null;
+    public void removeDuplicates(ListNode node){
+        ListNode prev=null;
         if(node==null) return;
         HashSet<Integer> nodes = new HashSet<>();
 
@@ -26,20 +26,20 @@ public class RemoveDuplicatesLinkedList {
     {
         RemoveDuplicatesLinkedList Rlist = new RemoveDuplicatesLinkedList();
 
-        Node node = new Node(5);
-        node.next = new Node(6);
-        node.next.next = new Node(7);
-        node.next.next.next = new Node(5);
-        node.next.next.next.next = new Node(8);
+        ListNode node = new ListNode(5);
+        node.next = new ListNode(6);
+        node.next.next = new ListNode(7);
+        node.next.next.next = new ListNode(5);
+        node.next.next.next.next = new ListNode(8);
         Rlist.removeDuplicates(node);
 
 
     }
 
 }
-class Node
+class ListNode
 {
     int data;
-    Node next;
-    Node(int d) {data = d; next = null; }
+    ListNode next;
+    ListNode(int d) {data = d; next = null; }
 }

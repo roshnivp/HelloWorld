@@ -5,22 +5,22 @@ package PracticeQstns;
  */
 public class SwapTwoNodesLL {
 
-     Node pX, pY, pXprev, pYprev,head = null;
+    ListNode pX, pY, pXprev, pYprev,head = null;
     public static void main(String[] args){
-        Node node= new Node(5);
-        node.next = new Node(1);
-        node.next.next = new Node(7);
-        node.next.next.next= new Node(2);
-        node.next.next.next.next = new Node(4);
+        ListNode node= new ListNode(5);
+        node.next = new ListNode(1);
+        node.next.next = new ListNode(7);
+        node.next.next.next= new ListNode(2);
+        node.next.next.next.next = new ListNode(4);
         SwapTwoNodesLL swap = new SwapTwoNodesLL();
         swap.searchElements(1,2,node);
         System.out.println();
 
     }
 
-     void searchElements(int x, int y, Node head){
-        Node p = head;
-        Node prev = null;
+     void searchElements(int x, int y, ListNode head){
+         ListNode p = head;
+         ListNode prev = null;
 
 
         while(p!=null && p.data!=x){
@@ -46,9 +46,9 @@ public class SwapTwoNodesLL {
 
     }
 
-    void swapElements(Node pX, Node pXprev, Node pY, Node pYprev){
+    void swapElements(ListNode pX, ListNode pXprev, ListNode pY, ListNode pYprev){
 
-        Node temp = null;
+        ListNode temp = null;
         temp = pY.next;
         pY.next = pX.next;
         pX.next = temp;

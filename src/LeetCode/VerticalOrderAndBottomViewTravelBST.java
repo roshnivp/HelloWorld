@@ -58,6 +58,7 @@ public class VerticalOrderAndBottomViewTravelBST {
         node.right.left = new TreeNode(9);
         bst.verticalTraversal(node);
         System.out.println("Botton View of Tree");
+
         bst.bottomViewBST();
         System.out.println("");
         System.out.println("Top View of Tree");

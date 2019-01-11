@@ -6,12 +6,12 @@ import java.security.PublicKey;
  * Created by Roshni Velluva Puthanidam on 09/12/17.
  */
 public class SortLinkedList {
-    static void sortLinkedList(Node root){
+    static void sortLinkedList(ListNode root){
         if(root==null) return;
-        Node i= root;
+        ListNode i= root;
 
         while(i!= null){
-            Node j= i.next;
+            ListNode j= i.next;
             while(j!= null){
                 if(i.data > j.data){
                     int temp = i.data;
@@ -30,11 +30,11 @@ public class SortLinkedList {
     }
 
     public static void main(String[] args){
-        Node node= new Node(5);
-        node.next = new Node(1);
-        node.next.next = new Node(7);
-        node.next.next.next= new Node(2);
-        node.next.next.next.next = new Node(4);
+        ListNode node= new ListNode(5);
+        node.next = new ListNode(1);
+        node.next.next = new ListNode(7);
+        node.next.next.next= new ListNode(2);
+        node.next.next.next.next = new ListNode(4);
         sortLinkedList(node);
     }
 }

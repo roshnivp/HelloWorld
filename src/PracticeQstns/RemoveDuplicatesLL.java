@@ -7,14 +7,14 @@ import java.util.Set;
  * Created by Roshni Velluva Puthanidam on 28/02/18.
  */
 public class RemoveDuplicatesLL {
-    Node head;
+    ListNode head;
     /* Inserts a new Node at front of the list. */
 
     public void push(int new_data)
     {
         /* 1 & 2: Allocate the Node &
                   Put in the data*/
-        Node new_node = new Node(new_data);
+        ListNode new_node = new ListNode(new_data);
 
         /* 3. Make next of new Node as head */
         new_node.next = head;
@@ -41,7 +41,7 @@ public class RemoveDuplicatesLL {
         /*Create loop for testing */
       //  llist.head.next.next.next.next = llist.head;
 
-        Node temp =llist.removeDuplicates();
+        ListNode temp =llist.removeDuplicates();
         while(temp!=null){
             System.out.println(temp.data);
             temp = temp.next;
@@ -49,10 +49,10 @@ public class RemoveDuplicatesLL {
        // System.out.print(llist.toString());
     }
 
-    Node removeDuplicatesFromSortedLL(){
+    ListNode removeDuplicatesFromSortedLL(){
 
-        Node p =head;
-        Node temp =head;
+        ListNode p =head;
+        ListNode temp =head;
 
         while(p!=null && p.next!=null){
             if(p.data!=p.next.data){
@@ -66,10 +66,10 @@ public class RemoveDuplicatesLL {
 
 
     }
-    Node removeDuplicates(){
+    ListNode removeDuplicates(){
         Set<Integer> hashSet= new HashSet<>();
-        Node temp = head;
-        Node prev=null;
+        ListNode temp = head;
+        ListNode prev=null;
 
         while(temp!=null && temp.next!=null){
             if(!hashSet.contains(temp.data)){
