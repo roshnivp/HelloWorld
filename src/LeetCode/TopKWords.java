@@ -11,14 +11,9 @@ public class TopKWords {
         int num=0;
 
         for (int i=0; i<words.length; i++){
-            if (tm.containsKey(words[i])){
-                int count= tm.get(words[i]);
-                tm.put(words[i],count+1);
-            }
+            int count = tm.getOrDefault(words[i],0);
+            tm.put(words[i],count+1);
 
-            else{
-                tm.put(words[i],1);
-            }
         }
 
         List<Map.Entry> list = new ArrayList<Map.Entry>(tm.entrySet());

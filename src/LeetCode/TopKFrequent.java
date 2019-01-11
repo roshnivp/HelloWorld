@@ -11,14 +11,9 @@ public class TopKFrequent {
         int num=0;
 
         for (int i=0; i<nums.length; i++){
-            if (hm.containsKey(nums[i])){
-                int count= hm.get(nums[i]);
-                hm.put(nums[i],count+1);
-            }
+            int count = hm.getOrDefault(nums[i],0);
+            hm.put(nums[i],count+1);
 
-            else{
-                hm.put(nums[i],1);
-            }
         }
 //        List<Integer> new_list=new ArrayList<>();
         List<Integer> result=new ArrayList<>();
