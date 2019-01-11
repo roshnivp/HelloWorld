@@ -55,18 +55,14 @@ public class SwapTwoNodesLL {
 
         if(pXprev ==null){
             pY = head;
-            pYprev.next = pX;
         }
 
         if(pYprev ==null){
             pX = head;
-            pXprev.next = pY;
         }
+        pXprev.next = pY;
+        pYprev.next = pX;
 
-        if(pXprev !=null && pYprev !=null ){
-            pXprev.next = pY;
-            pYprev.next = pX;
-        }
 
 
     }

@@ -3,7 +3,7 @@ package LeetCode;
 public class FirstMissingPositiveInteger {
 
     public static void main(String[] args){
-        int[] new_arr = new int[]{3,4,-1,1};
+        int[] new_arr = new int[]{1, 3, 6, 4, 1, 2};
         System.out.println(firstMissingPositiveInteger(new_arr));
     }
 
