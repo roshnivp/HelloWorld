@@ -4,7 +4,7 @@ public class BinaryToDecimel {
     public int solution(String S) {
         // write your code in Java SE 8
        // int number = getDecimelNumber(Integer.valueOf(S));
-        long number=Long.parseLong(S, 2);
+        int number=Integer.parseInt(S, 2);
         System.out.println(number);
         int count=0;
 
@@ -20,7 +20,7 @@ public class BinaryToDecimel {
         }
         return count;
     }
-    public long subtract(long x, long y)
+    public int subtract(int x, int y)
     {
 
         if (y == 0)
@@ -61,7 +61,7 @@ public class BinaryToDecimel {
 //    }
     public static void main(String[] args){
         BinaryToDecimel bd = new BinaryToDecimel();
-        System.out.println(bd.solution("1111111111111111111111111001100111"));
+        System.out.println(bd.solution("11110100001001000000"));
     }
 }
 
