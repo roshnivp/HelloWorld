@@ -34,7 +34,7 @@ public class ShortestArrayWindow {
             int c = A[end];
             if (unique.containsKey(c)) {
                 if (found.containsKey(c)) {
-                    found.put(c, found.get(c) + 1);
+                    found.put(c, found.getOrDefault(c,0) + 1);
                 } else {
                     found.put(c, 1);
                     foundCounter++;

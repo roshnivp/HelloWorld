@@ -1,37 +1,41 @@
 package LeetCode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class InterSectionOfArray {
     public static int[] intersect(int[] nums1, int[] nums2) {
 
+        HashMap<Integer,Integer> map = new HashMap<>();
         List<Integer> ls = new ArrayList<>();
-        List<Integer> result = new ArrayList<>();
 
-
-        for(int i=0; i<nums1.length; i++){
-            ls.add(nums1[i]);
+        for(int i=0;i<nums1.length; i++){
+            map.put(nums1[i], map.getOrDefault(nums1[i],0)+1);
         }
 
-        for (int k=0; k<nums2.length; k++){
-            if(ls.isEmpty()) break;
-            if(ls.contains(nums2[k])){
-                result.add(nums2[k]);
-                ls.remove(new Integer(nums2[k]));
+        for(int i=0;i<nums2.length;i++){
+            if(map.containsKey(nums2[i])){
+                map.put(nums2[i],map.get(nums2[i])-1);
+                if(map.get(nums2[i])>=0){
+                    ls.add(nums2[i]);
+                }
             }
+
         }
-        int[] ans = new int[result.size()];
-        for(int i=0; i<ans.length; i++ ){
-            ans[i] = result.get(i);
+
+        int[] res = new int[ls.size()];
+        for(int i=0; i<ls.size(); i++){
+            res[i]=ls.get(i);
         }
-        return ans;
+        return res;
 
     }
 
     public static void main(String[] args){
-        int[] nums1 = new int[]{4,9,5};
+        int[] nums1 = new int[]{4,9,5,9};
         int[] nums2 = new int[]{9,4,9,8,4};
-        System.out.println(intersect(nums1,nums2).toString());
+        System.out.println(Arrays.toString(intersect(nums1,nums2)));
     }
 }

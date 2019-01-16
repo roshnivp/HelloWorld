@@ -38,9 +38,9 @@ public class BinaryConverter {
             hm.put(arr[i],count);
 
         }
-        Set<Map.Entry<Integer, Integer>> set = hm.entrySet();
 
-        List<Map.Entry> list = new ArrayList<Map.Entry>(set);
+
+        List<Map.Entry> list = new ArrayList<Map.Entry>(hm.entrySet());
 
         Collections.sort( list, new Comparator()
         {

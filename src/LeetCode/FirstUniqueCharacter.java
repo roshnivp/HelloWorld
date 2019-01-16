@@ -9,31 +9,19 @@ import java.util.Map;
  */
 public class FirstUniqueCharacter {
     static int firstUniqChar(String s) {
-        Map<Character,Integer> map = new LinkedHashMap<>();
-
+        if(s.length()==0) return -1;
+        if(s.length()==1) return 0;
+        Map<Character,Integer> map = new HashMap<>();
         for(int i=0;i<s.length();i++){
-            if(map.containsKey(s.charAt(i))){
-                int count =map.get(s.charAt(i));
-                map.put(s.charAt(i),count+1);
-            }
-            else{
-                map.put(s.charAt(i),1);
-            }
+            map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
         }
-        char k = ' ';
-        for(Map.Entry<Character,Integer> hm: map.entrySet()){
-            if(hm.getValue()==1){
-                k= hm.getKey();
-                break;
-            }
 
+        // find the index
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1)
+                return i;
         }
-        int index=-1;
-        for(int i=0; i<s.length();i++){
-            if(s.charAt(i)==k) index=i;
-
-        }
-         return index;
+        return -1;
 
 
     }

@@ -1,26 +1,26 @@
 package LeetCode;
 
 public class MaxPathSum {
-    int maxValue;
+    int maxValue=Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-        maxValue=Integer.MIN_VALUE;
+        if(root == null) return 0;
         maxSum(root);
         return maxValue;
     }
 
-    int maxSum(TreeNode node){
+    int maxSum(TreeNode root){
 
-        if(node==null) return 0;
+        if(root == null) return 0;
 
-        int left =  Math.max(0,maxSum(node.left));
+        int left = maxSum(root.left);
+        int right = maxSum(root.right);
+        int maxTotal = left + right + root.val;
+        int maxSingle = Math.max(left, right) + root.val;
 
-        int right = Math.max(0,maxSum(node.right));
-
-        maxValue = Math.max(maxValue, left+right+node.val);
-
-        return Math.max(left,right)+node.val;
-
-
+        int res = Math.max(maxTotal, maxSingle);
+        res = Math.max(root.val, res);
+        maxValue = Math.max(maxValue, res); //global variable keep track of the max path sum so far
+        return Math.max(maxSingle, root.val);// -- maxsum from the current node(current node to leaf)
 
     }
     public static void main(String[] args){

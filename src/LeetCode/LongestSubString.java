@@ -28,21 +28,20 @@ public class LongestSubString {
 
         }
         int lengthOfLongestSubstring(String s) {
-            Map<Character,Integer> hm = new HashMap<>();
-            int max=0;
+            int length=0;
+            int n =s.length();
+            if(n==0 || n==1) return n;
+            Map<Character, Integer> hm = new HashMap<>();
 
-            for (int i = 0; i < s.length(); i++) {
-                if (!hm.containsKey(s.charAt(i))) {
-                    hm.put(s.charAt(i), i);
+            for (int i = 0, left=0; i < n; i++) {
+                if (hm.containsKey(s.charAt(i))) {
+                    left = Math.max(left,hm.get(s.charAt(i))+1);
                 }
-                else {
-                    max = Math.max(max, hm.size());
-                    i = hm.get(s.charAt(i));
-                    hm.clear();
-                }
-
+                hm.put(s.charAt(i),i);
+                length = Math.max(length,i-left+1);
             }
-            return Math.max(max,hm.size());
+
+            return length;
         }
 
 

@@ -44,11 +44,11 @@ public class BoundaryTraversalOfBinaryTree {
 
             if(root.right!=null){
                 System.out.println(root.val);
-                leftBoundaryTraversal(root.right);
+                rightBoundaryTraversal(root.right);
             }
             else if(root.left!=null){
                 System.out.println(root.val);
-                leftBoundaryTraversal(root.left);
+                rightBoundaryTraversal(root.left);
             }
 
 

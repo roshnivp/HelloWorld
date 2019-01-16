@@ -24,7 +24,7 @@ class CycleInUnDirGraph
     }
 
     // A utility function to find the subset of an element i
-    int find(int parent[], int i)
+    int find(int[] parent, int i)
     {
         if (parent[i] == -1)
             return i;
@@ -32,7 +32,7 @@ class CycleInUnDirGraph
     }
 
     // A utility function to do union of two subsets
-    void Union(int parent[], int x, int y)
+    void Union(int[] parent, int x, int y)
     {
         int xset = find(parent, x);
         int yset = find(parent, y);

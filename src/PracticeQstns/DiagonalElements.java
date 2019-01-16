@@ -1,11 +1,8 @@
 package PracticeQstns;
 
-import LeetCode.InOrderTree;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 
 public class DiagonalElements {
 
@@ -35,7 +32,7 @@ public class DiagonalElements {
         {
             TreeNode node = q.poll();
 
-            if(node==null){
+            if(node == null){
                 q.add(null);
                 System.out.println();
                 node= q.poll();
@@ -50,7 +47,6 @@ public class DiagonalElements {
                     q.add(node.left);
                 }
                 node = node.right;
-
 
             }
         }

@@ -16,7 +16,7 @@ class Node
     }
 }
 
-class RemoveShortPathFromBST
+class RemovePathSizeKFromBST
 {
     Node root;
 
@@ -53,7 +53,6 @@ class RemoveShortPathFromBST
     // nodes.
     Node removeShortPathNodes(Node node, int k)
     {
-        int pathLen = 0;
         return removeShortPathNodesUtil(node, 1, k);
     }
 
@@ -71,16 +70,16 @@ class RemoveShortPathFromBST
     // Driver program to test for samples
     public static void main(String args[])
     {
-        RemoveShortPathFromBST tree = new RemoveShortPathFromBST();
+        RemovePathSizeKFromBST tree = new RemovePathSizeKFromBST();
         int k = 4;
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(4);
+        tree.root = new Node(6);
+        tree.root.left = new Node(4);
+        tree.root.right = new Node(10);
+        tree.root.left.left = new Node(2);
         tree.root.left.right = new Node(5);
-        tree.root.left.left.left = new Node(7);
-        tree.root.right.right = new Node(6);
-        tree.root.right.right.left = new Node(8);
+        tree.root.left.left.left = new Node(1);
+        tree.root.right.right = new Node(12);
+        tree.root.right.right.left = new Node(11);
         System.out.println("The inorder traversal of original tree is : ");
         tree.printInorder(tree.root);
         Node res = tree.removeShortPathNodes(tree.root, k);
