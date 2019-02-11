@@ -1,6 +1,8 @@
 package LeetCode;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class MaxSlidingWindow {
     public static int[] maxSlidingWindow(int[] nums, int k) {
@@ -9,15 +11,15 @@ public class MaxSlidingWindow {
         }
         int size = nums.length-k+1;
         int[] res = new int[size];
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
-        for(int i=0; i<size; i++){
-            int temp= nums[i];
-            for(int j=i;j<i+k;j++){
-                if(temp<nums[j]){
-                    temp=nums[j];
-                }
+        for(int i=0; i<nums.length; i++){
+            pq.add(nums[i]);
+            if(pq.size()==k){
+                res[i-k+1]=pq.peek();
+                pq.remove(nums[i-k+1]);
             }
-            res[i]=temp;
+
         }
         return res;
 

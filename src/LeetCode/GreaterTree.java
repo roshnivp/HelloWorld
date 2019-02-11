@@ -7,6 +7,7 @@ public class GreaterTree {
          if(root==null) return root;
          convertBST(root.right);
          valueToBeAdded+=root.val;
+         root.val= valueToBeAdded;
          convertBST(root.left);
          return root;
     }

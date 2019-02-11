@@ -27,6 +27,7 @@ public class MaxPathSum {
         MaxPathSum mp = new MaxPathSum();
         TreeNode node = new TreeNode(-10);
         node.left= new TreeNode(9);
+        node.left.left= new TreeNode(19);
         node.right = new TreeNode(20);
         node.right.left=new TreeNode(15);
         node.right.right= new TreeNode(7);

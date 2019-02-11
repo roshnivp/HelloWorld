@@ -8,7 +8,7 @@ public class UniquePermutation {
     List<List<Integer>> ans = new ArrayList<>();
     public List<List<Integer>> permuteUnique(int[] nums) {
         ArrayList<Integer> list = new ArrayList<>();
-        Arrays.sort(nums);
+      //  Arrays.sort(nums);
         for(int i:nums) {
             list.add(i);
         }
@@ -18,6 +18,7 @@ public class UniquePermutation {
 
     // this method use back track
     private void helper(List<Integer> tempList,ArrayList<Integer> list) {
+        //stopping condition
         if(list.size()==0) {
             ans.add(new ArrayList<>(tempList));  // add a copy of tempList
         }
@@ -40,7 +41,7 @@ public class UniquePermutation {
 
 
     public static void main(String[] args){
-        int[] arr = new int[]{1,2,1};
+        int[] arr = new int[]{1,2,3};
         UniquePermutation pa = new UniquePermutation();
         List<List<Integer>> res = pa.permuteUnique(arr);
         for(int k=0; k<res.size();k++){

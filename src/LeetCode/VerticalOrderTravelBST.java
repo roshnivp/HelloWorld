@@ -6,14 +6,14 @@ import java.util.*;
  * Created by Roshni Velluva Puthanidam on 08/12/17.
  */
 public class VerticalOrderTravelBST {
-    Map<Integer,List<Integer>> map = new HashMap<>();
+    Map<Integer,List<Integer>> map = new TreeMap<>();
 
     public  void verticalTraversal(TreeNode root){
         if(root==null) return ;
         int hd= 0;
         updateHashMap(root,hd);
-        for(Map.Entry<Integer,List<Integer>> hm:map.entrySet()){
-            System.out.println(hm.getValue().toString());
+        for(List<Integer>  hm:map.values()){
+            System.out.println(hm.toString());
         }
     }
 

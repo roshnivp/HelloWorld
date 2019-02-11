@@ -22,14 +22,21 @@ class ReverseNodeInKSize
 
         int count = 0;
 
+        Node runningNode = head;
+        while(runningNode!=null && count<k){
+            runningNode = runningNode.next;
+            count++;
+        }
+        if(runningNode==null)return head;
+
         /* Reverse first k nodes of linked list */
-        while (count < k && current != null)
+        while (count >0 && current != null)
         {
             next = current.next;
             current.next = prev;
             prev = current;
             current = next;
-            count++;
+            count--;
         }
 
 	/* next is now a pointer to (k+1)th node
@@ -78,7 +85,7 @@ class ReverseNodeInKSize
 
 		/* Constructed Linked List is 1->2->3->4->5->6->
 		7->8->8->9->null */
-        llist.push(9);
+       // llist.push(10);
         llist.push(8);
         llist.push(7);
         llist.push(6);

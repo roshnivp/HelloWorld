@@ -21,7 +21,7 @@ public class BSTtoLL {
             if(node.left!=null) st.push(node.left);
 
             if(!st.isEmpty()){ node.right = st.peek(); } // keeping next node
-          //  node.left = null;
+            node.left = null;
         }
 
 

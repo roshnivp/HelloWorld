@@ -48,14 +48,28 @@ class SubSetsMinDiff {
         return findMinRec(arr, 0, 0, sumTotal);
     }
 
+
+    //find subset of given sum
+
+    public static boolean isThereSubSetSum(int arr[], int sum, int sumCalculated,int i){
+        if(i>arr.length-1)return false;
+        if(sum==sumCalculated){
+            return true;
+        }
+        else{
+            return isThereSubSetSum(arr,sum,sumCalculated+arr[i],i+1) ||isThereSubSetSum(arr,sum,sumCalculated,i+1);
+        }
+    }
     /* Driver program to test above function */
     public static void main(String[] args)
     {
         int arr[] = {3, 1, 4, 2, 2, 1};
         int n = arr.length;
-        System.out.print("The minimum difference"+
-                " between two sets is " +
-                findMin(arr, n));
+//        System.out.print("The minimum difference"+
+//                " between two sets is " +
+//                findMin(arr, n));
+
+        System.out.println("is There SubSet Sum:"+isThereSubSetSum(arr,6,0,0));
     }
 }
 

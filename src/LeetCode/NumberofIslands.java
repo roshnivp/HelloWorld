@@ -5,7 +5,7 @@ package LeetCode;
  */
 public class NumberofIslands {
     public static void main(String[] args){
-        int[][] arr = new int[][]{{1,1,0,0,0},{1,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}};
+        int[][] arr = new int[][]{{1,1,0,0,0},{1,1,0,0,0},{0,0,0,0,0},{0,0,0,1,1}};
         System.out.println(numberOfIsland(arr));
     }
     static int numberOfIsland(int[][] grid){
@@ -28,6 +28,8 @@ public class NumberofIslands {
         return numberOfIslands;
     }
     static void makeNeighboursVisited(int x, int y, int[][] grid,boolean[][] visited){
+
+        if(x<0 || y<0 || x>grid.length-1 || y >grid[0].length || visited[x][y] || grid[x][y]==0) return;
         // These arrays are used to get row and column numbers of 8 neighbours
         // of a given cell
          int rowNbr[] = {-1, -1, -1,  0, 0,  1, 1, 1};

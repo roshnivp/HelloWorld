@@ -12,18 +12,18 @@ public class KthSmallestFromSOrtedMatrix {
         int m = matrix.length, n = matrix[0].length;
         int[][] visited = new int[m][n];
         que.offer(new int[]{0,0,matrix[0][0]});
-        visited[0][0] = 1;
+       // visited[0][0] = 1;
         int ans = matrix[0][0];
         while(k> 0 && !que.isEmpty()){
             int[] cur = que.poll();
             ans = cur[2];
-            if(cur[0] + 1 < m && visited[cur[0] + 1][cur[1]] == 0){
+            if(cur[0] + 1 < m ){
                 que.offer(new int[]{cur[0] + 1, cur[1], matrix[cur[0] + 1][cur[1]]});
-                visited[cur[0] + 1][cur[1]] = 1;
+               // visited[cur[0] + 1][cur[1]] = 1;
             }
-            if(cur[1] + 1 < n && visited[cur[0]][cur[1] + 1] == 0){
+            if(cur[1] + 1 < n ){
                 que.offer(new int[]{cur[0], cur[1] + 1, matrix[cur[0]][cur[1] + 1]});
-                visited[cur[0]][cur[1] + 1] = 1;
+               // visited[cur[0]][cur[1] + 1] = 1;
             }
             k--;
         }

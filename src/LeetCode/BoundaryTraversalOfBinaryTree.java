@@ -19,36 +19,41 @@ public class BoundaryTraversalOfBinaryTree {
     }
 
     public static void boundaryTraversal(TreeNode root){
-        leftBoundaryTraversal(root);
+        System.out.println(root.val);
+        if(root.left==null && root.right==null)return;
+        leftBoundaryTraversal(root.left);
         rightBoundaryTraversal(root.right);
         leafNodeTraversal(root);
     }
 
     public static void leftBoundaryTraversal(TreeNode root) {
-            if(root==null) return;
+        if(root==null) return;
+        System.out.println(root.val);
 
-            if(root.left!=null){
-                System.out.println(root.val);
+        if(root.left!=null){
                 leftBoundaryTraversal(root.left);
-            }
-            else if(root.right!=null){
-                System.out.println(root.val);
+        }
+        else if(root.right!=null){
                 leftBoundaryTraversal(root.right);
-            }
+        }
+        else{
+            return;
+        }
 
 
     }
     public static void rightBoundaryTraversal(TreeNode root) {
             if(root==null) return;
-
+            System.out.println(root.val);
 
             if(root.right!=null){
-                System.out.println(root.val);
                 rightBoundaryTraversal(root.right);
             }
             else if(root.left!=null){
-                System.out.println(root.val);
                 rightBoundaryTraversal(root.left);
+            }
+            else{
+                return;
             }
 
 

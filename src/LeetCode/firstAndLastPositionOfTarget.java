@@ -23,7 +23,7 @@ public class firstAndLastPositionOfTarget {
                 start++;
 
 
-                while( end<nums.length && nums[end]==target) end++;
+                while( end<=nums.length-1 && nums[end]==target) end++;
                 end--;
 
                 return new int[]{start,end};

@@ -10,7 +10,7 @@ public class PallindromePartition {
             return result;
         }
 
-        ArrayList<String> partition = new ArrayList<>();//track each possible partition
+        ArrayList<String> partition = new ArrayList<>(); //track each possible partition
         addPalindrome(s, 0, partition);
 
         return result;

@@ -30,8 +30,7 @@ public class searchWords {
     }
 
     public boolean searchWord(char[][] board,String word, int i, int j,  int index){
-        if(i<0 || j<0 || i>board.length-1 || j>board[0].length-1) return false;
-        if(word.charAt(index)!=board[i][j]) return false;
+        if(i<0 || j<0 || i>board.length-1 || j>board[0].length-1 ||word.charAt(index)!=board[i][j]) return false;
         if(index==word.length()-1) {
             return true;
         }

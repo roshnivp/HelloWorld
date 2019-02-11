@@ -36,16 +36,16 @@ public class PallindromePartitionMinCut {
 
         int[] cuts= new int[n];
         for(int i=0; i<n; i++){
-            int temp = i;
+             cuts[i] = i;
             if(isPallindrome[0][i]) cuts[i]=0; //check entire substring is pallindrome for the value of i
             else{
                 for(int j=0; j<i;j++){
-                    if((isPallindrome[j+1][i]) && temp > cuts[j] + 1)
+                    if((isPallindrome[j+1][i]) && cuts[i] > cuts[j] + 1)
                     {
-                        temp = cuts[j] + 1;
+                        cuts[i] = cuts[j] + 1;
                     }
                 }
-                cuts[i] =temp;
+
             }
         }
         return cuts[n-1];

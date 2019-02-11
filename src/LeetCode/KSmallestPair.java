@@ -20,7 +20,7 @@ public class KSmallestPair {
             if (k > n1*n2)
             {
                 System.out.print("k pairs don't exist");
-                return res;
+                k = n1*n2;
             }
 
 

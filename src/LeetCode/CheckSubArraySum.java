@@ -12,6 +12,7 @@ public class CheckSubArraySum {
 
         Set<Integer> set = new HashSet<>();
         int sum =nums[0]%k;
+        set.add(0);
 
         for(int i=1; i<nums.length; i++){
             sum = (sum+nums[i])%k;
